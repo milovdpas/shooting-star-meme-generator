@@ -1,0 +1,33 @@
+body,
+html {
+  font-family: $fontstack;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $fontstack;
+  color: $secondary;
+  font-weight: bold;
+}
+
+p {
+  font-family: $fontstack;
+  color: $secondary;
+}
+
+.primary-color{
+  color: $primary!important;
+}
+
+.white-color{
+  color: $white!important;
+}
