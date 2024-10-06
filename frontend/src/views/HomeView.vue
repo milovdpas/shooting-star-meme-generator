@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-content">
     <header>
       <h1>Shooting Stars Meme Creator</h1>
     </header>
@@ -60,6 +60,9 @@
         </a>
       </div>
     </main>
+    <footer>
+      Created by <a href="https://milovanderpas.nl/" target="_blank">Milo</a>
+    </footer>
   </div>
 </template>
 
@@ -225,9 +228,18 @@ $primary-color: $blue;
 $dark-color: $dark-blue;
 
 #app {
+  display: flex;
+  flex-flow: column;
   text-align: center;
   padding: 20px;
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.page-content{
+  display: flex;
+  flex-flow: column;
+  flex:1;
 }
 
 header {
@@ -244,6 +256,7 @@ h1 {
 }
 
 main {
+  flex: 1;
 }
 
 form {
@@ -447,7 +460,7 @@ video {
   display: flex;
   flex-flow: column;
   video{
-    margin: 10px 0;
+    margin: 10px 0 0 0;
   }
 }
 
@@ -491,6 +504,16 @@ progress::-webkit-progress-value {
 
 progress {
   color: $primary-color;
+}
+
+footer {
+  margin-top: auto; // Pushes the footer to the bottom
+  color: $primary-color;
+  text-align: center;
+  padding-top: 20px;
+  a {
+    color: $dark-color;
+  }
 }
 
 </style>
