@@ -1,12 +1,12 @@
 <template>
   <div class="page-content">
     <header>
-      <h1>Shooting Stars Meme Creator</h1>
+      <h1>Shooting Stars Meme Generator</h1>
     </header>
     <main>
       <form class="form" @submit.prevent="uploadImage">
         <div class="select-group">
-          <label for="template" style="align-self: start;">Video template</label>
+          <label for="template" style="align-self: start;">Choose a video template</label>
           <div class="select">
             <select v-model="selectedTemplate" id="template">
               <option value="meme_template_2">Small Version (1 min)</option>
