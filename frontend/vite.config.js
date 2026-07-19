@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
                 },
             }),
             Sitemap({
-                hostname: 'https://meme-generator.milovanderpas.nl',
+                hostname: 'https://meme-creator.milovanderpas.nl',
                 dynamicRoutes: ['/'],
             }),
         ],

@@ -116,13 +116,14 @@ export default {
         this.message = '';
         this.videoUrl = '';
         this.updateProgress(duration);
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/upload`, formData, {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/shooting-stars/upload`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           },
         });
         this.message = response.data.message;
-        this.videoUrl = `${import.meta.env.VITE_API_URL}/${response.data.output_video}`;
+        // output_video is an absolute path (e.g. /api/shooting-stars/outputs/<id>.mp4)
+        this.videoUrl = `${import.meta.env.VITE_API_URL}${response.data.output_video}`;
         this.uploadProgress = 0; // Reset progress bar
       } catch (error) {
         this.message = 'An error occurred while uploading the file.';

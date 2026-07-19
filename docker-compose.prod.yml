@@ -1,0 +1,18 @@
+services:
+  meme-creator:
+    image: ${DOCKERHUB_USERNAME}/meme-creator-frontend:latest
+    container_name: meme-creator              # nginx proxies to this name
+    restart: unless-stopped
+    expose:
+      - "80"                                  # internal only — ingress goes through the proxy
+    networks:
+      - web
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  web:
+    external: true
