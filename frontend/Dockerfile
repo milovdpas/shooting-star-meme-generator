@@ -1,6 +1,8 @@
 # build stage
-# node:20 — this project uses Vite 3, which predates newer Node versions
-FROM node:20-alpine AS build-stage
+# node:22 — Node 20 reached EOL on 2026-04-30. The old pin was a precaution about
+# Vite 3 predating newer Node; verified 2026-09-24 that Vite 3 builds clean on 22.
+# Build stage only in any case: the container that runs is nginx, below.
+FROM node:22-alpine AS build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
