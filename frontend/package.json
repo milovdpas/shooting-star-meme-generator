@@ -25,7 +25,7 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.3",
+    "@vitejs/plugin-vue": "^6.0.9",
     "sass": "^1.104.1",
     "vite": "^3.0.9",
     "vite-plugin-sitemap": "^0.8.2",
